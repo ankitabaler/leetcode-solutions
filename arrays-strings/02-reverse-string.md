@@ -1,18 +1,20 @@
 ## Problem: Reverse String (Easy)
-**Link:** [LeetCode - Reverse String](https://leetcode.com/problems/reverse-string/)
+**Link:** [https://leetcode.com/problems/reverse-string/](https://leetcode.com/problems/reverse-string/?utm_source=gemini)
+
+
 
 ### Code
-```cpp
-class Solution {
-public:
-    void reverseString(vector<char>& s) {
-        int left = 0;
-        int right = s.size() - 1;
-        
-        while (left < right) {
-            swap(s[left], s[right]);
-            left++;
-            right--;
-        }
+```c
+void reverseString(char* s, int sSize) {
+    int left = 0;
+    int right = sSize - 1;
+
+    while (left < right) {
+        char temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+
+        left++;
+        right--;
     }
-};
+}
